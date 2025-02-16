@@ -29,7 +29,10 @@ app.get("/", (req, res) => {
     data: products,
   });
 });
-
+app.get("/product", (req, res) => {
+  const { name } = req.query;
+  res.send({ name });
+});
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
 });
